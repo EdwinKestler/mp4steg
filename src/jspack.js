@@ -316,4 +316,4 @@ function JSPack() {
   };
 }
 
-module.exports = new JSPack();
+export default new JSPack();

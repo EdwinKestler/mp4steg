@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /home/kestl/github/mp4steg/test/*.js)",
+      "Bash(npm test)",
+      "Bash(grep -E '\\\\.\\(mp4|txt|jpg|py\\)$')",
+      "Bash(while read hash msg)",
+      "Bash(do echo \"=== Commit: $msg ===\")",
+      "Bash(git show $hash --stat)",
+      "Bash(done)",
+      "Bash(wc -l /home/kestl/github/mp4steg/src/*.js /home/kestl/github/mp4steg/test/*.js)",
+      "Bash(npx tap test/*.js)",
+      "Bash(npm install)",
+      "Bash(node test/common_test.js)",
+      "Bash(node test/mp4_test.js)",
+      "Bash(for f in test/common_test.js test/mp4_test.js test/embedBinary_test.js test/embedObject_test.js test/embedMeta_test.js test/zzzmixedEncAndPublic_test.js)",
+      "Bash(do echo \"=== $f ===\")",
+      "Bash(node \"$f\")",
+      "Bash(node test/embedBinary_test.js)",
+      "Bash(node test/embedObject_test.js)",
+      "Bash(node test/embedMeta_test.js)",
+      "Bash(node test/zzzmixedEncAndPublic_test.js)",
+      "Bash(npm install --save-dev typescript tsup vitest @types/node)",
+      "Bash(npm install --save-dev typescript tsup vitest @types/node --legacy-peer-deps)",
+      "Bash(npm install --legacy-peer-deps)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(npx vitest run)",
+      "Bash(npx tsup)",
+      "Bash(node -e \"const m = require\\(''./dist/index.cjs''\\); console.log\\(Object.keys\\(m\\)\\);\")",
+      "Bash(node --input-type=module -e \"import { MP4, AES, Convert } from ''./dist/index.js''; console.log\\(''ESM:'', typeof MP4, typeof AES, typeof Convert\\);\")",
+      "Bash(ls *.js src/*.js)",
+      "Bash(npm uninstall long)",
+      "Bash(grep -B2 -A2 \"catch\" src/*.ts)"
+    ],
+    "additionalDirectories": [
+      "/home/kestl/.claude/projects/-home-kestl-github-mp4steg"
+    ]
+  }
+}

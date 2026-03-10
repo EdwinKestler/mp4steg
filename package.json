@@ -1,27 +1,45 @@
 {
   "name": "mp4steg",
-  "main": "mp4steg.js",
-  "version": "1.0.12",
-  "description": "",
-  "directories": {
-    "test": "test"
+  "version": "2.0.0",
+  "description": "Hide and extract files within MP4 video containers with AES-256-GCM encryption",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "crypto-js": "^4.0.0",
     "debug": "^4.3.1",
-    "long": "^4.0.0",
     "tmp": "^0.2.1"
   },
   "devDependencies": {
-    "eslint": "^7.16.0",
-    "grunt": "^1.3.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-env": "^1.0.1",
-    "grunt-tape": "^0.1.0",
-    "tap": "^14.11.0"
-  },
-  "scripts": {
-    "test": "tap test/*.js"
+    "@types/debug": "^4.1.12",
+    "@types/node": "^25.4.0",
+    "@types/tmp": "^0.2.6",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   },
   "author": "",
   "license": "ISC"
